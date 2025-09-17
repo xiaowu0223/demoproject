@@ -315,7 +315,15 @@ nignx配置修改实现集群代理；
 ![img_103.png](img_103.png)
 ![img_104.png](img_104.png)
 #### Lua脚本
+相关语法见教程
 ![img_105.png](img_105.png)
+锁的实现
+Lua脚本文件内容：
+![img_106.png](img_106.png)
+代码逻辑
+![img_107.png](img_107.png)
+#### 总结
+![img_108.png](img_108.png)
 ### redis优化秒杀
 ### 消息队列实现异步秒杀
 
