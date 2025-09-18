@@ -99,6 +99,12 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.7</version>
         </dependency>
+<!--        redission依赖注入-->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+            <version>3.51.0</version>
+        </dependency>
 
 
     </dependencies>
