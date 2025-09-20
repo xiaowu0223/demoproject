@@ -3,9 +3,10 @@
 --- Created by xiaowu.
 --- DateTime: 2025/9/19 17:04
 ---
---- 参数列表 订单和用户id
+--- 参数列表 优惠券和用户id，订单id
 local voucherId = ARGV[1]
 local userId = ARGV[2]
+local orderId = ARGV[3]
 --- 数据key 库存和订单key
 local stockKey = "seckill:stock:" .. voucherId
 local orderKey = "seckill:order:" .. voucherId
@@ -22,4 +23,7 @@ end
 --- 3 扣减库存，下单(保存用户)，返回0
 redis.call("incrby", stockKey, -1)
 redis.call("sadd", orderKey, userId)
+
+--- 4 发送消息到队列当中
+redis.call("xadd", "streams.orders", "*", "userId", userId, "voucherId", voucherId, "id", orderId)
 return 0
